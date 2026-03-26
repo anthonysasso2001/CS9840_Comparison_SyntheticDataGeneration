@@ -1,0 +1,69 @@
+Column Name                , Dtype  , New Dtype (for processing)
+Date                       , str    , DELETE
+Timestamp                  , object , datetime
+Scr_IP                     , str    , ipv4 (int)
+Scr_port                   , object , int
+Des_IP                     , str    , ipv4 (int)
+Des_port                   , object , int
+Protocol                   , str    , CATEGORICAL
+Service                    , str    , CATEGORICAL
+Duration                   , str    , float
+Scr_bytes                  , str    , int
+Des_bytes                  , str    , int
+Conn_state                 , int64  , int (bool)
+missed_bytes               , object , int
+is_syn_only                , bool   , int (bool)
+Is_SYN_ACK                 , bool   , int (bool)
+is_pure_ack                , bool   , int (bool)
+is_with_payload            , bool   , int (bool)
+FIN or RST                 , bool   , int (bool)
+Bad_checksum               , bool   , int (bool)
+is_SYN_with_RST            , bool   , int (bool)
+Scr_pkts                   , str    , int
+Scr_ip_bytes               , str    , int
+Des_pkts                   , str    , int
+Des_ip_bytes               , str    , int
+anomaly_alert              , object , int (bool)
+total_bytes                , str    , int
+total_packet               , str    , int
+paket_rate                 , str    , float
+byte_rate                  , str    , float
+Scr_packts_ratio           , str    , float
+Des_pkts_ratio             , str    , float
+Scr_bytes_ratio            , str    , float
+Des_bytes_ratio            , str    , float
+Avg_user_time              , str    , float
+Std_user_time              , str    , float
+Avg_nice_time              , str    , float
+Std_nice_time              , str    , float
+Avg_system_time            , str    , float
+Std_system_time            , str    , float
+Avg_iowait_time            , str    , float
+Std_iowait_time            , str    , float
+Avg_ideal_time             , str    , float
+Std_ideal_time             , str    , float
+Avg_tps                    , str    , float
+Std_tps                    , str    , float
+Avg_rtps                   , str    , float
+Std_rtps                   , str    , float
+Avg_wtps                   , str    , float
+Std_wtps                   , str    , float
+Avg_ldavg_1                , str    , float
+Std_ldavg_1                , str    , float
+Avg_kbmemused              , str    , float
+Std_kbmemused              , str    , float
+Avg_num_Proc/s             , str    , float
+Std_num_proc/s             , str    , float
+Avg_num_cswch/s            , str    , float
+std_num_cswch/s            , str    , float
+OSSEC_alert                , int64  , int (bool)
+OSSEC_alert_level          , int64  , int
+Login_attempt              , int64  , int (bool)
+Succesful_login            , int64  , int (bool)
+File_activity              , int64  , int (bool)
+Process_activity           , int64  , int (bool)
+read_write_physical.process, int64  , int (bool)
+is_privileged              , int64  , int (bool)
+class1                     , str    , CATEGORICAL
+class2                     , str    , CATEGORICAL
+class3                     , str    , CATEGORICAL
