@@ -1,0 +1,23 @@
+# Data Processing & Utilities
+pandas
+scikit-learn
+python-dotenv
+kagglehub
+tqdm
+ipywidgets
+plotly
+kaleido
+nbconvert
+matplotlib
+
+# Machine Learning & LLM Frameworks
+torch>=2.2.0
+torchvision
+torchaudio
+huggingface_hub
+transformers
+accelerate
+
+# Synthetic Data Generation
+tabgan
+be-great
