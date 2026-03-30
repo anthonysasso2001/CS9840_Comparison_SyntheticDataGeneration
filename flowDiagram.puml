@@ -1,0 +1,53 @@
+@startuml
+!include <material/database>
+!include <material/matrix>
+!include <material/thought_bubble>
+!include <material/memory>
+
+skinparam theme plain
+skinparam dpi 300
+skinparam DefaultTextAlignment center
+
+' Makes the activity boxes invisible
+skinparam activity {
+    BackgroundColor transparent
+    BorderColor transparent
+    Shadowing false
+}
+
+title Synthetic Data Benchmarking Pipeline
+
+: <$ma_database>\n **X-IIoTID Dataset**;
+
+partition "Data Scaling" {
+    split
+        : <$ma_memory>\n Small\n (800 rows);
+    split again
+        : <$ma_memory>\n Medium\n (8,000 rows);
+    split again
+        : <$ma_memory>\n Large\n (80,000 rows);
+    end split
+}
+
+partition "Generative Training" {
+    split
+        : <$ma_matrix>\n Train GAN;
+        note left: GAN (tabgen)
+    split again
+        : <$ma_matrix>\n Train Forest Diffusion;
+        note left: Diffusion Model (scikit/lgbm)
+    split again
+        : <$ma_matrix>\n Train LLM;
+        note left: LLM (distilgpt2)
+    end split
+}
+
+: **Generate Synthetic Datasets**;
+
+partition "Evaluation" {
+    : <$ma_matrix>\n Train LightGBM\n (LGBM) Classifiers;
+    : <$ma_thought_bubble>\n Compare Real vs.\n Synthetic Distributions & Calculate\n Performance Metrics;
+    note right: Runtime, F1-Score, AUC, \nKL Divergence
+}
+
+@enduml
